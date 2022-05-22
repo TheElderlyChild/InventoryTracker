@@ -1,0 +1,16 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+  <h1>{{ item }}</h1>
+
+  <p><strong>id:</strong> {{ item.id }}</p>
+  <p><strong>name:</strong> {{ item.name }}</p>
+  <p><strong>type:</strong> {{ item.type }}</p>
+  <p><strong>description:</strong> {{ item.description }}</p>
+  <p><strong>located:</strong> <a href="{{ item.get_location_url }}">{{ item.get_location }}</a></p>
+  <p><strong>added:</strong> {{ item.created_date }}
+
+  <a href="{{ item.get_absolute_url }}/update"><p>Update Item</p></a>
+  <a href="{{ item.get_absolute_url }}/delete"><p>Delete Item</p></a>
+  <a href="{{ item.get_absolute_url }}/assign"><p>Assign Item</p></a>
+{% endblock %}

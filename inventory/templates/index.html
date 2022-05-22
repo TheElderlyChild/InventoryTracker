@@ -1,0 +1,10 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+  <h1>Inventory Records</h1>
+  <p>The inventory has the following record counts:</p>
+  <ul>
+    <li><a href="{% url 'items' %}"><strong>Items:</strong></a> {{ num_items }}</li>
+    <li><a href="{% url 'locations' %}"><strong>Locations:</strong></a> {{ num_locations }}</li>
+  </ul>
+{% endblock %}

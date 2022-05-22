@@ -1,0 +1,27 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+  <h1>{{ location }}</h1>
+
+  <p><strong>id:</strong> {{ location.id }}</p>
+  <p><strong>address:</strong> {{ location.address }}</p>
+  <p><strong>city:</strong> {{ location.city }}</p>
+
+  <a href="{{ location.get_absolute_url }}/update"><p>Update Location</p></a>
+  <a href="{{ location.get_absolute_url }}/delete"><p>Delete Location</p></a>
+
+  <strong>items:</strong>
+
+  {% if location.get_items %}
+  <ul>
+    {% for item in location.get_items %}
+      <li>
+        <a href="{{ item.get_absolute_url }}">({{ item.id }})</a> {{item.name}} located at <a href="{{ item.get_location_url }}">{{ item.get_location }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no items at this location.</p>
+  {% endif %}
+
+{% endblock %}
