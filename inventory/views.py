@@ -92,3 +92,7 @@ def index(request):
 def page_not_found(request, exception):
     """Error view for a page not found"""
     return render(request, 'page_not_found.html')
+
+def forbidden_request(request, exception):
+    """Error view for a page not found"""
+    return render(request, 'forbidden_request.html')

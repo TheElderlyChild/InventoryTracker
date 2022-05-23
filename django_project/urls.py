@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import RedirectView
-from django.conf.urls import (handler404)
+from django.conf.urls import (handler404, handler403)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,3 +25,4 @@ urlpatterns = [
 ]
 
 handler404 = 'inventory.views.page_not_found'
+handler403 = 'inventory.views.forbidden_request'
